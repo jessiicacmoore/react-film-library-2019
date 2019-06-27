@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import TMDB from './TMDB'
+
+import FilmListing from './FilmListing';
+import FilmDetails from './FilmDetails';
+
 
 const App = () => {
+  const initialFilms = TMDB.films;
+  const [films, setFilms] = useState(initialFilms);
+
   return (
     <div className="film-library">
-      <div className="film-list">
-        <h1 className="section-title">FILMS</h1>
-      </div>
-      <div className="film-details">
-        <h1 className="section-title">DETAILS</h1>
-      </div>
+      <FilmListing films={ films } />
+      <FilmDetails films={ films } />
     </div>
   );
 }
