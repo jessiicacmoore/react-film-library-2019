@@ -2,9 +2,14 @@ import React from 'react';
 
 const App = () => {
   return (
-    <main className="film-library">
-      APP GOES HERE
-    </main>
+    <div className="film-library">
+      <div className="film-list">
+        <h1 className="section-title">FILMS</h1>
+      </div>
+      <div className="film-details">
+        <h1 className="section-title">DETAILS</h1>
+      </div>
+    </div>
   );
 }
 
