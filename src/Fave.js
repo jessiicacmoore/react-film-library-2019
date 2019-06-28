@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Fave = () => {
+const Fave = ({onFaveToggle}) => {
   const handleClick = (e) => {
-    console.log(`Handling Click!`)
+    e.stopPropagation();
+    console.log(`Handling Click!`);
+    onFaveToggle();
   }
   return(
     <div className="film-row-fave add_to_queue">

@@ -2,18 +2,16 @@ import React from 'react';
 import FilmPoster from './FilmPoster';
 import Fave from './Fave';
 
-const FilmRow = ({title, poster_path, release_date}) => {
+const FilmRow = ({film, onFaveToggle}) => {
   
-  const year = new Date(release_date).getFullYear();
-
   return (
     <div className="film-row">
-      <FilmPoster title={title} path={poster_path} />
+      <FilmPoster title={ film.title } path={ film.poster_path } />
       <div className="film-summary">
-        <h1>{title}</h1>
-        <p>{year}</p>
+        <h1>{ film.title }</h1>
+        <p>{ new Date(film.release_date).getFullYear() }</p>
       </div>
-      <Fave />
+      <Fave onFaveToggle={() => onFaveToggle(film)}/>
     </div>
   );
 }
