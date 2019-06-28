@@ -3,14 +3,18 @@ import FilmRow from './FilmRow';
 
 const FilmListing = ({films, onFaveToggle}) => {
 
-  const filmRows = films.map((film, i) => 
-    <FilmRow key={film.id} film={film} onFaveToggle={onFaveToggle}/>
-  );
-
   const handleFilterClick = (e, selectedFilter) => {
     e.stopPropagation();
     console.log(`Setting filter to ${selectedFilter}`);
-  }
+  };
+  
+  const handleDetailsClick = (film) => {
+    console.log(`Fetching details for ${film.title}`)
+  };
+  
+  const filmRows = films.map((film, i) => 
+    <FilmRow key={film.id} film={film} onFaveToggle={onFaveToggle} handleDetailsClick={handleDetailsClick}/>
+  );
 
   return(
     <div className="film-list">
