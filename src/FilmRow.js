@@ -1,5 +1,6 @@
 import React from 'react';
 import FilmPoster from './FilmPoster';
+import Fave from './Fave';
 
 const FilmRow = ({title, poster_path, release_date}) => {
   
@@ -12,6 +13,7 @@ const FilmRow = ({title, poster_path, release_date}) => {
         <h1>{title}</h1>
         <p>{year}</p>
       </div>
+      <Fave />
     </div>
   );
 }
