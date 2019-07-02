@@ -9,8 +9,7 @@ import axios from 'axios';
 
 
 const App = () => {
-  const initialFilms = TMDB.films;
-  const [films, setFilms] = useState(initialFilms);
+  const films = TMDB.films;
   const [currentFilm, setCurrentFilm] = useState({});
   const [faves, setFaves] = useState([]);
 
