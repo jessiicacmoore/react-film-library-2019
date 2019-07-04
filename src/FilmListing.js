@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import FilmRow from './FilmRow';
 
 const FilmListing = ({films, faves, onFaveToggle, handleDetailsClick}) => {

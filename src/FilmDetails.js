@@ -1,7 +1,24 @@
 import React from 'react';
+import axios from 'axios';
+
+require('dotenv').config();
+
 
 const FilmDetails = ({film}) => {
   let details;
+
+  const game = () => {
+
+    const url = 'http://localhost:8000/api/game-of-thrones/';
+    const token = process.env.REACT_APP_GOT_KEY;
+    console.log(token)
+    axios.get(url, {headers: { 
+      'Authorization': 'Bearer ' + token
+     }})
+      .then( response => {
+        console.log(response.data);
+      })
+  }
 
   if (film.id) {
     const backdropUrl = `https://image.tmdb.org/t/p/w1280/${film.backdrop_path}`;
@@ -34,7 +51,7 @@ const FilmDetails = ({film}) => {
   
   return(
     <div className="film-details">
-      <h1 className="section-title">DETAILS</h1>
+      <h1 className="section-title" onClick={game}>DETAILS</h1>
       {details}
     </div>
 
