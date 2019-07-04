@@ -11,7 +11,6 @@ const FilmDetails = ({film}) => {
 
     const url = 'http://localhost:8000/api/game-of-thrones/';
     const token = process.env.REACT_APP_GOT_KEY;
-    console.log(token)
     axios.get(url, {headers: { 
       'Authorization': 'Bearer ' + token
      }})
